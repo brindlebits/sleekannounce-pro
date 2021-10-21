@@ -66,3 +66,119 @@ body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .wrap.ca
 .sa-upsell-ad .sa-upsell-ad__btn:hover { text-decoration: none; background: transparent; color: #ff2f73; }
 
 .sa-upsell-ad .sa-upsell-ad__snooze { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #5d6674; line-height: 1; }
+
+/* ------------------------------------------------------------ *\
+	Popup Library
+\* ------------------------------------------------------------ */
+
+
+.sa-section-banners { position: relative; padding-top: 60px; font-family: museo-sans, sans-serif; line-height: 1.1; max-width: 1118px; }
+
+.sa-section-banners .section__content
+.sa-section-banners .section__sidebar { transition: opacity .5s; }
+
+.sa-section-banners.is-confirming .section__content,
+.sa-section-banners.is-confirming .section__sidebar { opacity: .5; }
+
+.sa-section-banners.is-loading .section__content,
+.sa-section-banners.is-loading .section__sidebar { opacity: .5; }
+
+.sa-section-banners .sa-ico-loading { position: absolute; top: 50%; left: 50%; z-index: 10; transform: translate(-50%, -50%); }
+
+.sa-section-banners .sa-btn { margin-top: 10px; }
+
+.sa-section-banners .section__logo { position: absolute; top: 22px; left: 0; width: 180px; }
+.sa-section-banners .section__logo img { max-width: 100%; height: auto; }
+
+.sa-section-banners .section__inner { position: relative; display: flex; align-items: flex-start; }
+
+.sa-section-banners .section__sidebar { border: 1px solid #e9ecee; border-radius: 7px; width: 284px; min-width: 284px; margin-left: 10px; background: #fbfbfb; padding: 20px; }
+.sa-section-banners .section__content { width: 100%; padding: 22px 22px; background: #fff; border: 1px solid #f1f1f1; border-radius: 3px; max-width: 782px; }
+.sa-section-banners .section__head { padding-bottom: 4px; border-bottom: 2px solid #f1f5f9; }
+.sa-section-banners .section__head p { font-size: 15px; font-weight: 900; color: #3a3d41; margin: 0; }
+
+.sa-section-banners .section__sidebar-navigation { margin-bottom: 20px; }
+.sa-section-banners .section__sidebar-navigation:last-child { margin-bottom: 0; }
+
+.sa-section-banners .section__sidebar-navigation > ul { list-style: none; padding: 0; margin: 0; }
+
+.sa-section-banners .section__sidebar-navigation > ul > li { padding: 0; margin: 0; border-bottom: 2px solid #f1f5f9; transition: border-color .4s; }
+.sa-section-banners .section__sidebar-navigation > ul > li:hover { border-color: #ff2f73; }
+
+.sa-section-banners .section__sidebar-navigation > ul > li:first-child { position: relative; padding-left: 20px; }
+.sa-section-banners .section__sidebar-navigation > ul > li:first-child:before { content: ''; position: absolute; top: 50%; transform: translateY(-50%); left: 0; width: 12px; height: 2px; background: #ff2f73; }
+.sa-section-banners .section__sidebar-navigation > ul > li:first-child:after { content: ''; position: absolute; top: 50%; transform: translateY(-50%); left: 5px; width: 2px; height: 12px; background: #ff2f73; }
+
+.sa-section-banners .section__sidebar-navigation > ul > li > a { font-family: museo-sans, sans-serif; font-size: 14px; color: #3a3d41; padding: 14px 0; text-decoration: none; transition: color .4s; display: block; font-weight: 300; }
+.sa-section-banners .section__sidebar-navigation > ul > li > a:focus { box-shadow: none; text-decoration: none; }
+.sa-section-banners .section__sidebar-navigation > ul > li > a:hover { text-decoration: none; color: #ff2f73; }
+
+.sa-banner-duplicate-confirmation { position: absolute; top: 50%; left: 50%; z-index: 99; transform: translate(-50%, -50%); width: 300px; background: #fff; box-shadow: 2px 4px 10px rgba(0,0,0,.2); border: 1px solid #eee; padding: 20px 30px; display: flex; flex-wrap: wrap; justify-content: center; opacity: 0; visibility: hidden; margin-top: 40px; transition: opacity .4s, visibility .4s, margin-top .4s; }
+.sa-banner-duplicate-confirmation p { width: 100%; text-align: center; margin-bottom: 20px; }
+
+.sa-section-banners.is-confirming .sa-banner-duplicate-confirmation { opacity: 1; visibility: visible; margin-top: 0; }
+
+.sa-banner-duplicate-confirmation .sa-btn + .sa-btn { margin-left: 15px; }
+
+.sa-banners .sa-banners__head { padding: 20px 12px 10px; }
+.sa-banners .sa-banners__head p { margin: 0; font-size: 14px; color: #3a3d41; font-weight: 500; }
+
+.sa-banners .sa-banners__body > ul { list-style: none; padding: 0; margin: 0; }
+.sa-banners .sa-banners__body > ul > li { padding: 4px 12px; border-top: 2px solid #f1f5f9; margin: 0; }
+.sa-banners .sa-banners__body > ul > li p { margin: 0; }
+.sa-banners .sa-banners__body > ul > li:nth-child(odd) { background: #fbfbfb; }
+.sa-banners .sa-banners__body > ul > li:last-child { border-bottom: 2px solid #f1f5f9; }
+
+.sa-banner { display: flex; align-items: center; }
+.sa-banner .sa-banner__content { width: 100%; }
+.sa-banner .sa-banner__content p { margin: 0; font-size: 14px; font-weight: 300; color: #3a3d41; }
+.sa-banner .sa-banner__content p a { color: inherit; text-decoration: none; }
+.sa-banner .sa-banner__actions { flex-shrink: 0; }
+.sa-banner .sa-banner__actions > ul { display: flex; align-items: center; margin: -5px -10px; padding: 0; }
+.sa-banner .sa-banner__actions > ul > li { padding: 5px 10px; margin: 0; font-family: museo-sans, sans-serif; }
+.sa-banner .sa-banner__actions > ul > li:first-child { width: 84px; }
+
+.sa-banner .sa-status { position: relative; font-family: museo-sans, sans-serif; font-size: 14px; line-height: 1.1; font-weight: 500; padding-left: 12px; }
+.sa-banner .sa-status:before { content: ''; position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 6px; height: 6px; background: currentColor; border-radius: 50%; }
+.sa-banner .sa-live { color: #1cb714; }
+.sa-banner .sa-draft { color: #727c8a; }
+
+.sa-banner .sa-banner__actions a:focus { box-shadow: none; text-decoration: none; }
+.sa-banner .sa-banner__btn-trash img { width: 15px; height: auto; }
+.sa-banner .sa-banner__btn-edit img { width: 14px; height: auto; }
+.sa-banner .sa-banner__btn-duplicate img { width: 14px; height: 14px; }
+
+/* ------------------------------------------------------------ *\
+	Btn
+\* ------------------------------------------------------------ */
+
+.sa-btn { display: inline-block; text-align: center; background: #ff2f73; border: 2px solid #ff2f73; color: #fff; font-weight: 300; font-size: 14px; line-height: 1.25; padding: 6px 12px; text-decoration: none; transition: background .4s, color .4s; border-radius: 4px; }
+.sa-btn:focus { background: #ff2f73; color: #fff; box-shadow: none; text-decoration: none; }
+.sa-btn:hover { text-decoration: none; background: transparent; color: #ff2f73; }
+
+/* ------------------------------------------------------------ *\
+	Dropdown
+\* ------------------------------------------------------------ */
+
+.sa-dropdown-status { position: relative; }
+
+.sa-dropdown-status .dropdown__head { cursor: pointer; position: relative; padding-right: 10px; color: #1cb714; }
+.sa-dropdown-status[data-status="disabled"] .dropdown__head { color: #727c8a; }
+
+.sa-dropdown-status .dropdown__head:after { content: ''; position: absolute; top: 50%; right: 0; transform: translateY(-50%); border-width: 6px 4px 0 4px; border-style: solid; border-color: #27b733 transparent transparent transparent; }
+.sa-dropdown-status[data-status="disabled"] .dropdown__head:after { border-color: #727c8a transparent transparent transparent; }
+
+.sa-dropdown-status .dropdown__body { position: absolute; top: calc(100% + 10px); left: 50%; z-index: 999; transform: translateX(-50%); min-width: 100px; opacity: 0; visibility: hidden; transition: opacity .4s, visible .4s; }
+.sa-dropdown-status.is-active .dropdown__body { opacity: 1; visibility: visible; }
+
+.sa-dropdown-status .dropdown__body > ul { padding: 0; margin: 0; background: #fff; box-shadow: 2px 4px 6px rgba(0,0,0,.25); }
+.sa-dropdown-status .dropdown__body > ul > li { padding: 0; margin: 0; width: 100%; }
+.sa-dropdown-status .dropdown__body > ul > li:first-child { margin: 0; }
+.sa-dropdown-status .dropdown__body > ul > li > a { display: block; padding: 8px 10px; text-decoration: none; text-align: center; transition: background .4s, color .4s; }
+.sa-dropdown-status .dropdown__body > ul > li > a:hover { background: #ff2f73; color: #fff; }
+
+/* ------------------------------------------------------------ *\
+	Ico Loading
+\* ------------------------------------------------------------ */
+
+.sa-ico-loading { display: inline-block; width: 80px; height: 80px; background: url('../../images/spinner-pink.svg') no-repeat center/cover; }

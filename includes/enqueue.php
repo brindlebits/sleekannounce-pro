@@ -22,9 +22,9 @@ function sa_wp_enqueue_scripts() {
 
 }
 
-add_action( 'admin_enqueue_scripts', 'crb_enqueue_files_admin' );
+add_action( 'admin_enqueue_scripts', 'sa_enqueue_files_admin' );
 
-function crb_enqueue_files_admin() {
+function sa_enqueue_files_admin() {
 	$styles_url  = SA_PLUGIN_URL . 'css/utils/admin.css';
 	$styles_path = SA_PLUGIN_DIR . 'css/utils/admin.css';
 

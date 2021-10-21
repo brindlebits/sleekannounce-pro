@@ -26,3 +26,26 @@ if ( ! function_exists( 'mb_register_menu_page_brindle' ) ) {
 
 	add_action( 'admin_menu', 'mb_register_menu_page_brindle' );
 }
+
+add_action( 'admin_menu', 'sa_register_custom_submenu_popup_library', 16 );
+function sa_register_custom_submenu_popup_library() {
+	$query = new WP_Query( array(
+		'post_type' => 'sa_banner',
+	) );
+
+	$url        = 'sa-banners-library.php';
+
+	$callback = function() {
+		include_once SA_PLUGIN_DIR . 'templates/banners-listing.php';
+	};
+
+	add_submenu_page(
+		'my-brindle.php',
+		'Banners Library',
+		'Banners Library',
+		'manage_options',
+		$url,
+		$callback,
+		80
+	);
+}
