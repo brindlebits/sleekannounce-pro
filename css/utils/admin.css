@@ -1,0 +1,68 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+#toplevel_page_my-brindle > a > .wp-menu-image img { width: 16px; }
+
+#adminmenu .wp-menu-image img { opacity: 1; }
+
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce div#titlediv { display: none; }
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce #screen-meta-links { display: none; }
+
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .wp-heading-inline,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .page-title-action { display: none; }
+
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .button-primary { background: #ff2f73 !important; }
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .button-primary:focus { box-shadow: 0 0 0 1px #fff, 0 0 0 3px #ff2f73  !important; }
+
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce #side-sortables { display: flex; flex-direction: column; }
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce #side-sortables > * { width: 100%; }
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce #side-sortables > #carbon_fields_container_sa_sidebar { order: 2; }
+
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .wrap.carbon-theme-options > h2 { width: 200px; padding: 0; height: 18px; background: url(../../images/sleek-announce-logo.png) no-repeat center/contain; border: 0; margin: 60px 0 10px; font-size: 0; }
+
+#adminmenu .wp-menu-image img { opacity: 1; }
+
+/* ------------------------------------------------------------ *\
+	Carbon Fields
+\* ------------------------------------------------------------ */
+
+
+#toplevel_page_my-brindle > .wp-submenu .wp-first-item { display: none; }
+
+#carbon_fields_container_sleekannounce { border: 0; background: transparent; }
+
+#carbon_fields_container_sleekannounce .cf-container__fields { border: 1px solid #ccd0d4; }
+
+#carbon_fields_container_sleekannounce .cf-container__tabs { padding: 0; background: #ccd0d4; }
+#carbon_fields_container_sleekannounce .cf-container__tabs-item { border: 0; background: transparent; color: #333; transition: background .4s, color .4s; margin: 0; }
+#carbon_fields_container_sleekannounce .cf-container__tabs-item:hover { background: #fd3273; color: #fff; }
+#carbon_fields_container_sleekannounce .cf-container__tabs-item--current { background: #fd3273; color: #fff; }
+
+.cf-container-carbon_fields_container_sleekannounce .cf-select__input,
+.cf-container-carbon_fields_container_sleekannounce .cf-textarea__input,
+.cf-container-carbon_fields_container_sleekannounce .cf-text__input { border: 1px solid #e9ecee; border-radius: 0; }
+.cf-container-carbon_fields_container_sleekannounce .cf-container .cf-field { border: 0; }
+.cf-container-carbon_fields_container_sleekannounce .cf-container .cf-field input:focus,
+.cf-container-carbon_fields_container_sleekannounce .cf-container .cf-field textarea:focus,
+.cf-container-carbon_fields_container_sleekannounce .cf-container .cf-field select:focus { border-color: #ff2f73; outline: 0; box-shadow: 0; }
+
+/*.cf-container-carbon_fields_container_sleekannounce.cf-container .cf-field + .cf-field { border-top: 0; }*/
+
+/* ------------------------------------------------------------ *\
+	Upsell
+\* ------------------------------------------------------------ */
+
+.sa-upsell-ad { font-family: Myriad Pro, sans-serif; position: relative; font-weight: 300; line-height: 1.69; border: 1px solid #e9ecee; border-radius: 7px; text-align: center; padding: 27px 27px 44px; font-size: 13px; background: #fbfbfb; }
+.sa-upsell-ad .sa-upsell-ad__inner { border: 1px solid #e9ecee; border-radius: 7px; padding: 24px 20px; }
+
+.sa-upsell-ad * { box-sizing: border-box; }
+.sa-upsell-ad img { max-width: 104px; height: auto; margin: 0 auto 20px; }
+.sa-upsell-ad p { margin-top: 0; font-family: inherit; }
+.sa-upsell-ad a { font-family: inherit; }
+.sa-upsell-ad .sa-upsell-ad__image { display: block; width: 104px; height: 91px; background: url('../../images/sa-upsell-sidebar.png') no-repeat center/cover; margin: 0 auto 20px; }
+.sa-upsell-ad .sa-upsell-ad__btn { display: block; width: 100%; text-align: center; background: #ff2f73; border: 2px solid #ff2f73; color: #fff; font-weight: 300; font-size: 12px; line-height: 1.25; padding: 10px 12px; text-decoration: none; transition: background .4s, color .4s; border-radius: 4px; }
+.sa-upsell-ad .sa-upsell-ad__btn strong { font-size: 14px; }
+.sa-upsell-ad .sa-upsell-ad__btn:hover { text-decoration: none; background: transparent; color: #ff2f73; }
+
+.sa-upsell-ad .sa-upsell-ad__snooze { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #5d6674; line-height: 1; }

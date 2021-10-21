@@ -1,0 +1,37 @@
+
+Enter the following in the "Custom CSS" Area
+
+
+.bar-plugin-show-bar ~ .wrapper > .header { top: 69px; }
+
+.bar-plugin + .wrapper > .header {
+	-webkit-transition: top 1.2s;
+			transition: top 1.2s;
+}
+
+@media screen and (max-width: 814px) {
+	.bar-plugin-show-bar ~ .wrapper > .header { top: 80px; }
+	body.logged-in .bar-plugin-show-bar + .wrapper > .header { top: 112px; }
+}
+
+@media screen and (max-width: 443px) {
+	.bar-plugin-show-bar ~ .wrapper > .header { top: 92px; }
+	body.logged-in .bar-plugin-show-bar + .wrapper > .header { top: 124px; }
+}
+
+
+
+Enter the following in the "Custom Javascript" Area:
+
+
+jQuery(window).on('scroll', function(){
+
+			var header = jQuery('.header');
+
+			if ( jQuery(window).scrollTop() > 30 && jQuery('.bar-plugin.top').length ) {
+				header.addClass('top-fixed');
+			} else {
+				header.removeClass('top-fixed');
+			}
+
+});
