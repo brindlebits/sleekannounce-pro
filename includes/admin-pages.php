@@ -19,7 +19,7 @@ if ( ! function_exists( 'mb_register_menu_page_brindle' ) ) {
 			$capabilities,
 			'my-brindle.php',
 			'',
-			plugin_dir_url( __FILE__ ) . 'images/menu-icon.png',
+			SA_PLUGIN_URL . 'images/menu-icon.png',
 			75
 		);
 	}
