@@ -24,11 +24,11 @@ $posts = $query->posts;
 			<div class="section__body">
 				<div class="sa-banners">
 					<?php if ( $query->have_posts() ): ?>
-						<div class="sa-banners__head">
+						<div class="banners__head">
 							<p><?php echo __( 'Title', 'mb-sa' ) ?></p>
-						</div><!-- /.sa-banners__head -->
+						</div><!-- /.banners__head -->
 
-						<div class="sa-banners__body">
+						<div class="banners__body">
 							<ul>
 								<?php foreach ( $posts as $post ) :
 
@@ -50,7 +50,7 @@ $posts = $query->posts;
 									<?php include SA_PLUGIN_DIR . 'templates/parts/banners-item.php'; ?>
 								<?php endforeach; ?>
 							</ul>
-						</div><!-- /.sa-banners__body -->
+						</div><!-- /.banners__body -->
 					<?php endif ?>
 				</div><!-- /.sa-banners -->
 			</div><!-- /.section__body -->

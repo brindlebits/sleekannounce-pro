@@ -1,10 +1,10 @@
 <li>
 	<div class="sa-banner" data-id="<?php echo $post->ID; ?>">
-		<div class="sa-banner__content">
+		<div class="banner__content">
 			<p><a href="<?php echo get_edit_post_link( $post->ID ); ?>"><?php echo get_the_title( $post->ID ) ?></p></a>
-		</div><!-- /.sa-banner__content -->
+		</div><!-- /.banner__content -->
 
-		<div class="sa-banner__actions">
+		<div class="banner__actions">
 			<ul>
 				<li>
 					<div data-status="<?php echo $post_status; ?>" class="sa-dropdown-status sa-js-status-dropdown">
@@ -34,23 +34,23 @@
 				</li>
 
 				<li>
-					<a class="sa-banner__btn-duplicate js-duplicate-popup" href="">
+					<a title="<?php _e( 'Duplicate', 'ms-sa' ) ?>" class="banner__btn-duplicate js-duplicate-banner" href="">
 						<img src="<?php echo SA_PLUGIN_URL . 'images/ico-duplicate.png' ?>" alt="" />
 					</a>
 				</li>
 
 				<li>
-					<a class="sa-banner__btn-edit" href="<?php echo get_delete_post_link( $post->ID, '', true ) ?>">
+					<a title="<?php _e( 'Delete', 'ms-sa' ) ?>" class="banner__btn-edit" href="<?php echo get_delete_post_link( $post->ID, '', true ) ?>">
 						<img src="<?php echo SA_PLUGIN_URL . 'images/ico-trash.png' ?>" alt="" />
 					</a>
 				</li>
 
 				<li>
-					<a class="sa-banner__btn-edit" href="<?php echo get_edit_post_link( $post->ID ) ?>">
+					<a title="<?php _e( 'Edit', 'ms-sa' ) ?>" class="banner__btn-edit" href="<?php echo get_edit_post_link( $post->ID ) ?>">
 						<img src="<?php echo SA_PLUGIN_URL . 'images/ico-edit.png' ?>" alt="" />
 					</a>
 				</li>
 			</ul>
-		</div><!-- /.sa-banner__actions -->
-	</div><!-- /.qp-popup -->
+		</div><!-- /.banner__actions -->
+	</div><!-- /.sa-banner -->
 </li>
