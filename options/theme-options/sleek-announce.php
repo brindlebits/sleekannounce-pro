@@ -22,7 +22,7 @@ if ( class_exists( 'woocommerce' ) ) {
 
 
 
-Container::make('theme_options', __('SleekAnnounce', 'mb-sa'))
+Container::make('theme_options', __('Cookie Notification', 'mb-sa'))
 	->set_page_parent('my-brindle.php')
 	->add_tab(__('Announcement', 'mb-sa'), array(
 		Field::make( 'text', 'crb_sa_banner_title', __( 'Banner Title', 'mb-sa' ) )

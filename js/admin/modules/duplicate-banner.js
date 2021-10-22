@@ -4,7 +4,7 @@
 			event.preventDefault();
 
 			var $this = $(this);
-			var popupID = $this.closest('.qp-popup-list').attr('data-id');
+			var popupID = $this.closest('.sa-banner').attr('data-id');
 
 			$this.closest('.sa-section-banners').addClass('is-confirming').find('.sa-banner-duplicate-confirmation').attr('data-id', popupID);
 		});
@@ -19,7 +19,7 @@
 			$ajaxContainer.removeClass('is-confirming');
 
 			$.ajax({
-				url: qp_site_ajax.ajaxurl,
+				url: sa_options.ajax_url,
 				method: 'POST',
 				data: {
 					action: 'sa_duplicate_banner',
@@ -34,7 +34,7 @@
 					$ajaxContainer.find('.sa-ico-loading').remove();
 
 					if (data.status === 'success') {
-						$ajaxContainer.find('.sa-banners .sa-banners__body > ul').prepend(data.new_popup_html);
+						$ajaxContainer.find('.sa-banners .banners__body > ul').prepend(data.new_popup_html);
 					}
 
 				}

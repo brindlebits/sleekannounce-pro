@@ -13,15 +13,15 @@ function sa_duplicate_banner() {
 		$popup = get_post( intval( $id ) );
 
 		$new_post = array(
-			'post_type' => 'qp_popup',
-			'post_title' => get_the_title( $id ) . ' - ' . Date('Y-m-d H:i:s'),
+			'post_type' => 'sa_banner',
+			'post_title' => get_the_title( $id ) . ' - ' . Date( 'Y-m-d H:i:s' ),
 			'post_date' => Date( 'Y-m-d H:i:s' ),
 			'post_status' => 'publish',
 		);
 
 		$post_id = wp_insert_post( $new_post );
 
-		mbqp_duplicate_popup_custom_fields($id, $post_id);
+		mbqp_duplicate_banner_custom_fields($id, $post_id);
 
 		$status = 'success';
 	}
@@ -39,13 +39,13 @@ function sa_duplicate_banner() {
 			$post_status = 'draft';
 		}
 
-		$post_disabled = carbon_get_post_meta( $post->ID, 'qp_status' );
+		$post_disabled = carbon_get_post_meta( $post->ID, 'sa_status' );
 
 		if ( $post_disabled === 'qp_disabled' ) {
 			$post_status = 'disabled';
 		}
 
-		include QP_PLUGIN_DIR . 'templates/parts/popup-list-item.php';
+		include SA_PLUGIN_DIR . 'templates/parts/banners-item.php';
 
 		$new_popup_html = ob_get_contents();
 
@@ -60,10 +60,10 @@ function sa_duplicate_banner() {
 	wp_die();
 }
 
-add_action( 'wp_ajax_qp_update_popup_status', 'qp_update_popup_status' );
-add_action( 'wp_ajax_nopriv_qp_update_popup_status', 'qp_update_popup_status' );
+add_action( 'wp_ajax_sa_update_banner_status', 'sa_update_banner_status' );
+add_action( 'wp_ajax_nopriv_sa_update_banner_status', 'sa_update_banner_status' );
 
-function qp_update_popup_status() {
+function sa_update_banner_status() {
 	$id = isset( $_POST['id'] ) ? strip_tags( $_POST['id'] ) : '';
 	$new_status = isset( $_POST['status'] ) ? strip_tags( $_POST['status'] ) : '';
 
@@ -79,9 +79,9 @@ function qp_update_popup_status() {
 					'post_status' => 'publish'
 				]);
 
-				carbon_set_post_meta( $post->ID, 'qp_status', 'qp_enabled' );
+				carbon_set_post_meta( $post->ID, 'crb_sa_message_status', 'enabled' );
 			} else {
-				carbon_set_post_meta( $post->ID, 'qp_status', 'qp_disabled' );
+				carbon_set_post_meta( $post->ID, 'crb_sa_message_status', 'disabled' );
 			}
 
 			$request_status = 'success';

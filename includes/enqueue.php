@@ -37,6 +37,13 @@ function sa_enqueue_files_admin() {
 	$duplicate_js_url = SA_PLUGIN_URL . 'js/admin/modules/duplicate-banner.js';
 	$update_status_js_url = SA_PLUGIN_URL . 'js/admin/modules/update-banner-status.js';
 
-	wp_enqueue_script( 'sa-admin-js', $admin_js_url, array(), filemtime( $admin_js_path ) );
+	wp_enqueue_script( 'sa-admin-js', $admin_js_url, [ 'jquery' ], filemtime( $admin_js_path ) );
+	wp_enqueue_script( 'sa-admin-duplicate-banner-js', $duplicate_js_url, [ 'jquery', 'sa-admin-js' ], filemtime( $duplicate_js_dir ) );
+	wp_enqueue_script( 'sa-admin-update-status-js', $update_status_js_url, [ 'jquery', 'sa-admin-js' ], filemtime( $update_status_js_dir ) );
+
+	wp_localize_script( 'sa-admin-js', 'sa_options', array(
+		'ajax_url' => admin_url('admin-ajax.php')
+	));
+
 	wp_enqueue_style( 'sa-admin-styles', $styles_url, array(), filemtime( $styles_path ) );
 }

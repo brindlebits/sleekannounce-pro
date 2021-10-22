@@ -46,6 +46,6 @@ function sa_register_custom_submenu_popup_library() {
 		'manage_options',
 		$url,
 		$callback,
-		80
+		3
 	);
 }

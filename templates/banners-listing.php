@@ -40,9 +40,9 @@ $posts = $query->posts;
 										$post_status = 'disabled';
 									}
 
-									$post_disabled = carbon_get_post_meta( $post->ID, 'sa_status' );
+									$post_disabled = carbon_get_post_meta( $post->ID, 'crb_sa_message_status' );
 
-									if ( $post_disabled === 'sa_disabled' ) {
+									if ( $post_disabled === 'disabled' ) {
 										$post_status = 'disabled';
 									}
 
