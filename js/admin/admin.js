@@ -1,5 +1,8 @@
 ;(function($, window, document, undefined) {
 	$(function() {
+		saUpdateBannerTitle();
+		saAddCustomClassToBannerLibraryItem();
+
 		function saDashboardGetCookie(cname) {
 			var name = cname + '=';
 			var decodedCookie = decodeURIComponent(document.cookie);
@@ -18,7 +21,33 @@
 			return '';
 		}
 
-		function qsaDashboardSetCookie(cookieName, cookieValue, expirationDays) {
+		function saUpdateBannerTitle() {
+			var $crbBannerTitleField = $('[name="carbon_fields_compact_input[_crb_sa_banner_title]"]');
+
+			if ($crbBannerTitleField.length < 1) {
+				return;
+			}
+
+			$(window).on('load', function() {
+				$('#title').val($crbBannerTitleField.val());
+			});
+
+			$crbBannerTitleField.on('input', function() {
+				$('#title').val($(this).val());
+			});
+		}
+
+		function saAddCustomClassToBannerLibraryItem() {
+			$('#toplevel_page_my-brindle .wp-submenu > li').each(function() {
+				var $this = $(this);
+
+				if ($this.children('a').text() === 'Banners Library') {
+					$this.addClass('sa-with-arrow');
+				}
+			})
+		}
+
+		function saDashboardSetCookie(cookieName, cookieValue, expirationDays) {
 			const date = new Date();
 			date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
 			const expires = 'expires='+ date.toUTCString();
@@ -32,7 +61,7 @@
 
 				$(this).closest('.sa-upsell-ad').remove();
 	
-				qsaDashboardSetCookie('sa_options_upsell_hidden', true, 15);
+				saDashboardSetCookie('sa_options_upsell_hidden', true, 15);
 			});
 		}
 	

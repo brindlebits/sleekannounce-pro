@@ -6,22 +6,55 @@
 
 #adminmenu .wp-menu-image img { opacity: 1; }
 
-body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce div#titlediv { display: none; }
-body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce #screen-meta-links { display: none; }
+body.wp-admin.post-type-sa_banner div#titlediv,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_cookie_notification div#titlediv { display: none; }
 
-body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .wp-heading-inline,
-body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .page-title-action { display: none; }
+body.wp-admin.post-type-sa_banner #screen-meta-links,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_cookie_notification #screen-meta-links { display: none; }
 
-body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .button-primary { background: #ff2f73 !important; }
-body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .button-primary:focus { box-shadow: 0 0 0 1px #fff, 0 0 0 3px #ff2f73  !important; }
+body.wp-admin.post-type-sa_banner .wp-heading-inline,
+body.wp-admin.post-type-sa_banner .page-title-action,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_cookie_notification .wp-heading-inline,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_cookie_notification .page-title-action { display: none; }
 
-body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce #side-sortables { display: flex; flex-direction: column; }
-body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce #side-sortables > * { width: 100%; }
-body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce #side-sortables > #carbon_fields_container_sa_sidebar { order: 2; }
+body.wp-admin.post-type-sa_banner .button-primary,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_cookie_notification .button-primary { background: #ff2f73 !important; border: 0; }
 
-body.wp-admin.my-brindle_page_crb_carbon_fields_container_sleekannounce .wrap.carbon-theme-options > h2 { width: 200px; padding: 0; height: 18px; background: url(../../images/sleek-announce-logo.png) no-repeat center/contain; border: 0; margin: 60px 0 10px; font-size: 0; }
+body.wp-admin.post-type-sa_banner .button-primary:focus,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_cookie_notification .button-primary:focus { box-shadow: 0 0 0 1px #fff, 0 0 0 3px #ff2f73  !important; }
+
+body.post-type-sa_banner #side-sortables,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_cookie_notification #side-sortables { display: flex; flex-direction: column; }
+
+body.wp-admin.post-type-sa_banner #side-sortables > *,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_cookie_notification #side-sortables > * { width: 100%; }
+
+body.wp-admin.post-type-sa_banner #side-sortables > #carbon_fields_container_sa_sidebar,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_cookie_notification #side-sortables > #carbon_fields_container_sa_sidebar { order: 2; }
+
+body.wp-admin.post-type-sa_banner .wrap.carbon-theme-options > h2,
+body.wp-admin.my-brindle_page_crb_carbon_fields_container_cookie_notification .wrap.carbon-theme-options > h2 { width: 200px; padding: 0; height: 18px; background: url(../../images/sleek-announce-logo.png) no-repeat center/contain; border: 0; margin: 60px 0 10px; font-size: 0; }
 
 #adminmenu .wp-menu-image img { opacity: 1; }
+
+body.wp-admin.wp-admin.wp-admin #toplevel_page_my-brindle .wp-submenu > li.sa-with-arrow a,
+body.wp-admin.wp-admin.wp-admin .wp-submenu a[href="admin.php?page=crb_carbon_fields_container_cookie_notification.php"] { position: relative; padding-left: 24px !important; }
+
+body.wp-admin.wp-admin.wp-admin #toplevel_page_my-brindle .wp-submenu > li.sa-with-arrow a:before,
+body.wp-admin.wp-admin.wp-admin .wp-submenu a[href="admin.php?page=crb_carbon_fields_container_cookie_notification.php"]:before { content: ''; position: absolute; top: 50%; left: 12px; transform: translateY(-50%); border-width: 5px 0 5px 6px; border-color: transparent transparent transparent #c3c4c5; border-style: solid; }
+
+/* ------------------------------------------------------------ *\
+	Banner Single
+\* ------------------------------------------------------------ */
+
+#carbon_fields_container_sleekannounce { font-family: museo-sans, sans-serif; background: transparent; border: 0; box-shadow: none; }
+
+#carbon_fields_container_sleekannounce > button.handlediv { display: none; }
+
+#carbon_fields_container_sleekannounce > .postbox-header > h2 { max-width: 180px; height: 18px; background: url(../../images/sleek-announce-logo.png) no-repeat center/contain; border: 0; margin: 0 0 20px; font-size: 0; }
+#carbon_fields_container_sleekannounce > .postbox-header > .handle-actions { display: none; }
+
+.cf-container.cf-container-carbon_fields_container_sleekannounce { overflow: hidden;  }
 
 /* ------------------------------------------------------------ *\
 	Carbon Fields
