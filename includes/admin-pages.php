@@ -91,3 +91,21 @@ function mbsa_cpt_parent_file_fix( $parent_file ){
 
 	return $parent_file;
 }
+
+/**
+ * Fix Sub Menu Item Highlights
+ */
+add_filter( 'submenu_file', 'mbsa_submenu_file_fix' );
+function mbsa_submenu_file_fix( $submenu_file ){
+
+    /* Get current screen */
+    global $current_screen, $self;
+
+    if ( in_array( $current_screen->base, array( 'post', 'edit' ) ) ) {
+        if ( $current_screen->post_type == 'sa_banner' ) {
+	        $submenu_file = 'sa-banners-library.php';
+        }
+	}
+
+    return $submenu_file;
+}
