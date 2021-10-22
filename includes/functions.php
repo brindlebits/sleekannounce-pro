@@ -45,3 +45,37 @@ function mbqp_get_banner_carbon_fields() {
 
 	return $fields;
 }
+
+add_action( 'init', 'mbsa_migrate_theme_option_to_post_meta_banner', 10 );
+
+function mbsa_migrate_theme_option_to_post_meta_banner() {
+	$has_been_done = get_site_option( 'mbsa_theme_option_post_meta_migration', false );
+
+	if ( ! empty( $has_been_done ) ) {
+		return;
+	}
+
+	$banner_id = wp_insert_post( [
+		'post_title'  => 'Demo Banner',
+		'post_status' => 'publish',
+		'post_type'   => 'sa_banner'
+	] );
+
+	if ( empty( $banner_id ) ) {
+		return;
+	}
+
+	$meta_keys = mbqp_get_banner_carbon_fields();
+
+	foreach ( $meta_keys as $meta_key ) {
+		$original_meta_value = carbon_get_theme_option( $meta_key );
+		
+		if ( $meta_key === 'crb_sa_banner_title' ) {
+			$original_meta_value = get_the_title( $banner_id );
+		}
+
+		carbon_set_post_meta( $banner_id, $meta_key, $original_meta_value );
+	}
+
+	update_site_option( 'mbsa_theme_option_post_meta_migration', true );
+}
