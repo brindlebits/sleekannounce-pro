@@ -80,10 +80,6 @@
 					var id = $bar.attr('data-id');
 					snoozeDays = parseInt(snoozeDays);
 
-					console.log(snoozeBar)
-					console.log(snoozeDays)
-
-
 					if (snoozeBar && snoozeDays) {
 						mb_setCookie('crb_sa_hide_banner_' + id, true, snoozeDays);
 					}
