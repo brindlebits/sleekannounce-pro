@@ -57,32 +57,36 @@
 				var $barPlugin = $body.find('.' + _prefix + ' ul');
 
 				$body.find('.' + _prefix + '-btn-close, .sa-close-btn').click(function(event){
+					var $this = $(this);
+					var $bar = $this.closest('.bar-plugin');
 
-						setTimeout(function() {
-							if ($fixedHeader.length > 0 && $fixedHeader.css('position') === 'fixed' || $fixedHeader.css('position') === 'absolute') {
-								$fixedHeader.animate({
-									'margin-top' : '0'
-								});
+					setTimeout(function() {
+						if ($fixedHeader.length > 0 && $fixedHeader.css('position') === 'fixed' || $fixedHeader.css('position') === 'absolute') {
+							$fixedHeader.animate({
+								'margin-top' : '0'
+							});
 
-								$body.animate({
-									'margin-top' : '0'
-								});
-							}
-						}, _delay)
+							$body.animate({
+								'margin-top' : '0'
+							});
+						}
+					}, _delay)
 
 					event.preventDefault();
-					$body.find('.' + _prefix).removeClass($classes.ShowBar);	
+					$body.find('.' + _prefix).removeClass($classes.ShowBar);
 
-					// Sets a cookie, when closing the message bar
-					$.ajax({
-						type: 'POST',
-						url: sa_options.ajax_url,
-						data: {
-							action: 'crb_set_user_cookie'
-						}
+					var snoozeBar = $bar.attr('data-snooze');
+					var snoozeDays = $bar.attr('data-snooze-days');
+					var id = $bar.attr('data-id');
+					snoozeDays = parseInt(snoozeDays);
 
-					})
+					console.log(snoozeBar)
+					console.log(snoozeDays)
 
+
+					if (snoozeBar && snoozeDays) {
+						mb_setCookie('crb_sa_hide_banner_' + id, true, snoozeDays);
+					}
 				});
 
 				$win.load(function(){

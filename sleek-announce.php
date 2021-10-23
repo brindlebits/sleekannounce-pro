@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: SleekAnnounce
+ * Plugin Name: SleekAnnounce Pro
  * Plugin URI: https://mybrindle.com/
  * Description: Custom announcements, promotions and cookie notices, somehow made sexy.
  * Version: 1.0
@@ -35,15 +35,4 @@ function sa_custom_css_code() {
 
 	<?php endif;
 
-}
-
-/* 
-	WP Ajax function 
-*/
-add_action('wp_ajax_crb_set_user_cookie', 'crb_sa_set_user_cookie');
-add_action('wp_ajax_nopriv_crb_set_user_cookie', 'crb_sa_set_user_cookie');
-
-function crb_sa_set_user_cookie() {
-	session_start();
-	$_SESSION['crb_sa_message_shown'] = 1;
 }

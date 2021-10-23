@@ -12,9 +12,6 @@ function sa_add_sleek_announce_options() {
 	add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 
 	include_once( SA_PLUGIN_DIR . 'options/post-types.php' );
-
-	include_once( SA_PLUGIN_DIR . 'announcement.php' );
-	include_once( SA_PLUGIN_DIR . 'cookie-notice.php' );
 }
 
 function crb_attach_theme_options() {

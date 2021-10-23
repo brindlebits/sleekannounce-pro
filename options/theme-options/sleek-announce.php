@@ -96,7 +96,7 @@ Container::make('theme_options', __('Cookie Notification', 'mb-sa'))
 					)),
 				)),
 		Field::make('separator', 'crb_sa_cookie_visibility_option', __('Visibility Options', 'mb-sa')),
-		Field::make('select', 'crb_sa_cookie_show_on', __('Show the bar on:', 'mb-sa'))
+		Field::make('select', 'crb_sa_cookie_show_on', __('Show Cookie Notification on:', 'mb-sa'))
 			->add_options(array(
 				'all-pages' => 'All Pages',
 				'particular-pages' => 'Choose Pages'

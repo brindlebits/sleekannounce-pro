@@ -27,23 +27,23 @@ Container::make( 'post_meta', __( 'SleekAnnounce', 'mb-sa' ) )
 	->add_fields( [
 		Field::make( 'text', 'crb_sa_banner_title', __( 'Banner Title', 'mb-sa' ) )
 			->set_help_text( 'for reference only', 'mb-sa' ),
-		Field::make('select', 'crb_sa_message_status', __('Message Status', 'mb-sa'))
-			->add_options(array(
-				'disabled' => __('Disabled', 'mb-sa'), 
-				'enabled'  => __('Enabled', 'mb-sa'),
-			))
+		Field::make( 'select', 'crb_sa_message_status', __( 'Message Status', 'mb-sa' ) )
+			->add_options( array(
+				'disabled' => __( 'Disabled', 'mb-sa' ), 
+				'enabled'  => __( 'Enabled', 'mb-sa' ),
+			) )
 			->set_width(50)
-			->help_text('If you choose "Disabled", the message will not appear.'),
-		Field::make('text', 'crb_sa_height', __('Height', 'mb-sa'))
-			->set_width(50)
-			->set_default_value('65')
-			->set_help_text('Set height (number only, which is rendered in px).'),
-		Field::make('image', 'crb_sa_logo', __('Upload Logo', 'mb-sa'))
-			->help_text('Recommended size: 170px x 40px (double the size for retina optimization). Larger images will be automatically resized.'),
+			->help_text( 'If you choose "Disabled", the message will not appear.' ),
+		Field::make( 'text', 'crb_sa_height', __( 'Height', 'mb-sa' ) )
+			->set_width( 50 )
+			->set_default_value( '65' )
+			->set_help_text( 'Set height (number only, which is rendered in px).' ),
+		Field::make( 'image', 'crb_sa_logo', __('Upload Logo', 'mb-sa' ) )
+			->help_text( 'Recommended size: 170px x 40px (double the size for retina optimization). Larger images will be automatically resized.' ),
 
-		Field::make('text', 'crb_sa_logo_link', __('Logo Link', 'mb-sa')),
-		Field::make('textarea', 'crb_sa_announcement_text', __('Announcement Text', 'mb-sa'))
-			->set_default_value('Add a beautiful, fully responsive announcement to your site!')
+		Field::make( 'text', 'crb_sa_logo_link', __( 'Logo Link', 'mb-sa' ) ),
+		Field::make( 'textarea', 'crb_sa_announcement_text', __( 'Announcement Text', 'mb-sa' ) )
+			->set_default_value( 'Add a beautiful, fully responsive announcement to your site!' )
 			->help_text( __( 'This is the main message that will appear in your banner.', 'mb-sa' ) )
 			->set_required(true),
 
@@ -80,7 +80,8 @@ Container::make( 'post_meta', __( 'SleekAnnounce', 'mb-sa' ) )
 			->add_options(array(
 				'all-pages' => 'All Pages',
 				'particular-pages' => 'Choose Pages'
-			)),
+			))
+			->set_default_value( 'all-pages' ),
 		Field::make('association', 'crb_sa_visible_pages', __('Choose Pages', 'mb-sa'))
 			->set_types( $choose_pages_types )
 			->set_conditional_logic(array(
@@ -148,5 +149,18 @@ Container::make( 'post_meta', __( 'SleekAnnounce', 'mb-sa' ) )
 		Field::make('separator', 'crb_sa_fixed_header', __('Fixed Header', 'mb-sa')),
 		Field::make( 'text', 'crb_sa_fixed_header_selector', __( 'Fixed Header Selector', 'mb-sa' ) )
 			->set_help_text('If your website has a fixed header and you experience overlapping issues between the header and the announcement banner please enter a css selector for your header\'s fixed container for an easy fix.'),
-
+		Field::make('separator', 'crb_sa_banner_snooze_settings', __( 'Snooze Settings', 'mb-sa' ) ),
+		Field::make( 'checkbox', 'crb_sa_banner_snooze', __( 'Snooze banner after closing.', 'mb-sa' ) )
+			->set_default_value( false ),
+		Field::make( 'text', 'crb_sa_number_of_days_snooze', '' )
+			->set_default_value( '10' )
+			->set_help_text( __( 'Number of days to snooze banner', 'mb-sa' ) )
+			->set_conditional_logic( array(
+				'relation' => 'AND',
+				array(
+					'field' => 'crb_sa_banner_snooze',
+					'value' => true,
+					'compare' => '='
+				),
+			) ),
 	] );
