@@ -43,6 +43,8 @@ body.wp-admin.wp-admin.wp-admin .wp-submenu a[href="admin.php?page=crb_carbon_fi
 body.wp-admin.wp-admin.wp-admin #toplevel_page_my-brindle .wp-submenu > li.sa-with-arrow a:before,
 body.wp-admin.wp-admin.wp-admin .wp-submenu a[href="admin.php?page=crb_carbon_fields_container_cookie_notification.php"]:before { content: ''; position: absolute; top: 50%; left: 12px; transform: translateY(-50%); border-width: 5px 0 5px 6px; border-color: transparent transparent transparent #c3c4c5; border-style: solid; }
 
+body.wp-admin.wp-admin.wp-admin .wp-submenu a[href="admin.php?page=crb_carbon_fields_container_sleekannounce_theme_options_origin.php"] { display: none; }
+
 /* ------------------------------------------------------------ *\
 	Banner Single
 \* ------------------------------------------------------------ */
