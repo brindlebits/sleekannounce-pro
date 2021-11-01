@@ -46,17 +46,7 @@
 						'background' : _separator
 					});
 
-					var _clone = $elem.clone();
-
-					$elem.remove();
-
-					if (_position == 'bottom') {
-						_clone.appendTo('body');
-					} else {
-						_clone.prependTo('body');
-					}
-
-					var $barPlugin = $body.find('.' + _prefix + ' ul');
+					var $barPlugin = $elem.find('ul');
 
 					$body.find('.' + _prefix + '-btn-close, .sa-close-btn').click(function(event){
 						var $this = $(this);
