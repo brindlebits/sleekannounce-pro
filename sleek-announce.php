@@ -61,7 +61,7 @@ if ( class_exists( 'WC_AM_Client_MBBB' ) ) {
 	// Second argument must be the Product ID number if used. If left empty the client will need to enter it in the activation form.
 	// Plugin example. The $wcam_lib is optional, and must have a unique name if used to check if the API Key has been activated before allowing use of the plugin/ theme.
 
-	$mbbb_wcam_lib = new WC_AM_Client_MBBB( __FILE__, 12994, '1.0.2', 'plugin', 'https://mybrindle.com/product/banners-wordpress-plugin/', 'SleekAnnounce PRO' );
+	$mbbb_wcam_lib = new WC_AM_Client_MBBB( __FILE__, 1149, '1.0.2', 'plugin', 'https://mybrindle.com/product/banners-wordpress-plugin/', 'SleekAnnounce PRO' );
 }
 
 define( 'SA_PLUGIN_DIR', dirname(__FILE__) . DIRECTORY_SEPARATOR );
