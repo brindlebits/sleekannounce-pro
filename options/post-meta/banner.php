@@ -92,7 +92,18 @@ Container::make( 'post_meta', __( 'SleekAnnounce', 'mb-sa' ) )
 		Field::make('text', 'crb_sa_message_width', __('Message Width', 'mb-sa'))
 			->set_default_value(1040)
 			->help_text('You can change the width of the container of the message from this field.'),
-
+		// Field::make( 'checkbox', 'crb_sa_counter_include', __( 'Include Counter', 'mb-sa' ) ),
+		// Field::make( 'date_time', 'crb_sa_counter', __( 'Counter Timeout', 'mb-sa' ) )
+		// 	->set_conditional_logic(array(
+		// 		array(
+		// 			'field'   => 'crb_sa_counter_include',
+		// 			'value'   => true,
+		// 			'compare' => '='
+		// 		)
+		// 	))
+		// 	->set_picker_options( [
+		// 		'enableTime' => true
+		// 	] ),
 		// Visibility Options
 		Field::make('separator', 'crb_sa_visibility_option', __('Visibility Options', 'mb-sa')),
 		Field::make('select', 'crb_sa_show_on', __('Show the bar on:', 'mb-sa'))
