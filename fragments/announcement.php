@@ -22,6 +22,7 @@ if ( isset( $_SESSION['crb_sa_message_shown'] ) ) {
 	return;
 }
 
+$alignment              = carbon_get_post_meta( $post_id, 'crb_sa_message_position' );
 $message                = carbon_get_post_meta( $post_id, 'crb_sa_announcement_text' );
 $height                 = carbon_get_post_meta( $post_id, 'crb_sa_height' );
 $fixed_header_selector  = carbon_get_post_meta( $post_id, 'crb_sa_fixed_header_selector' );
@@ -84,6 +85,10 @@ if ( $button_style === 'floating' ) {
 	$class .= ' sa_bar--floating-btn';
 }
 
+if ( ! empty( $alignment ) && $alignment === 'centered' ) {
+	$class .= ' sa_bar--align-center';
+}
+
 $message_shell_width = carbon_get_post_meta( $post_id, 'crb_sa_message_width' );
 
 if ( empty( $message_shell_width ) ) {
@@ -122,7 +127,7 @@ $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze'
 
 		<?php endif; ?>
 
-		<ul>
+		<ul class="sa_bar__container">
 			<?php
 
 			$logo_link = carbon_get_post_meta( $post_id, 'crb_sa_logo_link' );
@@ -163,11 +168,7 @@ $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze'
 			if ( ! empty( $message ) ) : ?>
 
 				<li class="sa_bar__message">
-					<div class="sa_bar-table">
-						<div class="sa_bar-table-cell">
-							<?php echo mbsa_content( $message ); ?>
-						</div><!-- /.sa_bar-table-cell -->
-					</div><!-- /.sa_bar-table -->
+					<?php echo mbsa_content( $message ); ?>
 				</li>
 
 			<?php endif;

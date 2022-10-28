@@ -9,7 +9,7 @@
 .sa_bar li { position: relative; height: inherit; }
 .sa_bar .sa_bar__logo { display: flex; align-items: center; max-width: 200px; padding-right: 17px; margin-right: 10px; }
 .sa_bar span.sa_bar-separator { content: ' '; position: absolute; right: 3px; top: 16px; bottom: 16px; width: 1px; background-color: #3ed1d6; }
-.sa_bar .sa_bar__message { width: calc(100% - 360px); padding-right: 10px; }
+.sa_bar .sa_bar__message { width: calc(100% - 360px); display: flex; align-items: center; padding-right: 10px; }
 .sa_bar .sa_bar__btn { width: 160px; }
 .sa_bar.sa_bar.sa_bar.sa_bar p { line-height: 1.4; font-weight: 300; padding: 14px 0; font-size: 16px; }
 .sa_bar-shell { max-width: 960px; padding: 0 42px 0 0; margin: 0 auto; position: relative; }
@@ -55,6 +55,10 @@
 .sa_bar--floating-btn .sa_bar-btn { display: inline-block; padding: 6px 10px; height: auto; text-align: center; }
 .sa_bar--floating-btn .sa_bar-btn { display: inline-block; padding: 6px 10px; height: auto; text-align: center; }
 
+/* --floating-btn */
+.sa_bar--align-center .sa_bar__container { justify-content: center; }
+.sa_bar--align-center .sa_bar__message { width: auto; max-width: calc(100% - 360px); }
+
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
 	.sa_bar,
@@ -76,6 +80,10 @@
 	.sa_bar--floating-btn .sa_bar-btn { width: auto; }
 
 	.sa_bar--floating-btn.sa_bar.sa_bar.sa_bar.sa_bar p { padding: 8px 0; }
+
+	.sa_bar--align-center .sa_bar__message { text-align: center; padding-right: 0; max-width: 100%; }
+	.sa_bar--align-center .sa_bar__btn { justify-content: center; }
+	.sa_bar--align-center .sa_bar-shell { padding: 0 46px; }
 }
 
 /* ================================================================ *\

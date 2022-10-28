@@ -76,13 +76,18 @@ Container::make( 'post_meta', __( 'SleekAnnounce', 'mb-sa' ) )
 			->set_default_value('#ffffff'),
 		Field::make('color', 'crb_separator_color', __('Separator Color', 'mb-sa'))
 			->set_default_value('#3EBCF5'),
-
-		Field::make('select', 'crb_sa_message_position', __('Message Position', 'mb-sa'))
+		Field::make( 'select', 'crb_sa_content_alignment', __( 'Content Alignment', 'mb-sa' ) )
 			->add_options(array(
 				'top' 	 => 'Top',
 				'bottom' => 'Bottom'
 			))
 			->set_default_value('top'),
+		Field::make('select', 'crb_sa_message_position', __('Message Position', 'mb-sa'))
+			->add_options(array(
+				'fullwidth' => 'Full-Width',
+				'centered'  => 'Centered'
+			))
+			->set_default_value('fullwidth'),
 
 		Field::make('text', 'crb_sa_message_width', __('Message Width', 'mb-sa'))
 			->set_default_value(1040)
