@@ -1,4 +1,26 @@
 <?php
+/**
+ * Escape User input from WYSIWYG editors.
+ *
+ * Calls all filters usually executed on `the_content`.
+ *
+ * @param  string $content The content that needs to be escaped.
+ * @return string The escaped content.
+ */
+function mbsa_content( $content ) {
+	return apply_filters( 'mbsa_content', $content );
+}
+
+/**
+ * Attach all Hooks from `the_content` on `mbsa_content`.
+ */
+add_filter( 'mbsa_content', 'wptexturize'                          );
+add_filter( 'mbsa_content', 'wpautop'                              );
+add_filter( 'mbsa_content', 'shortcode_unautop'                    );
+add_filter( 'mbsa_content', 'prepend_attachment'                   );
+add_filter( 'mbsa_content', 'wp_filter_content_tags'               );
+add_filter( 'mbsa_content', 'do_shortcode',                     12 );
+add_filter( 'mbsa_content', 'convert_smilies',                  20 );
 
 function mbqp_duplicate_banner_custom_fields( $original_popup_id, $new_popup_id ) {
 	$meta_keys = mbqp_get_banner_carbon_fields();

@@ -154,7 +154,7 @@ $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze'
 				<li class="bar-plugin__message">
 					<div class="bar-plugin-table">
 						<div class="bar-plugin-table-cell">
-							<?php echo wpautop( $message ); ?>
+							<?php echo mbsa_content( $message ); ?>
 						</div><!-- /.bar-plugin-table-cell -->
 					</div><!-- /.bar-plugin-table -->
 				</li>

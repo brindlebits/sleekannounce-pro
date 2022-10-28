@@ -42,10 +42,18 @@ Container::make( 'post_meta', __( 'SleekAnnounce', 'mb-sa' ) )
 			->help_text( 'Recommended size: 170px x 40px (double the size for retina optimization). Larger images will be automatically resized.' ),
 
 		Field::make( 'text', 'crb_sa_logo_link', __( 'Logo Link', 'mb-sa' ) ),
-		Field::make( 'textarea', 'crb_sa_announcement_text', __( 'Announcement Text', 'mb-sa' ) )
+		Field::make( 'rich_text', 'crb_sa_announcement_text', __( 'Announcement Text', 'mb-sa' ) )
 			->set_default_value( 'Add a beautiful, fully responsive announcement to your site!' )
 			->help_text( __( 'This is the main message that will appear in your banner.', 'mb-sa' ) )
-			->set_required(true),
+			->set_required(true)
+			->set_settings( [
+				'media_buttons' => false,
+				'tinymce' => array(
+					'toolbar1' => 'bold,italic,underline,link',
+					'toolbar2' => false,
+				),
+				'quicktags' => false
+			] ),
 
 		Field::make('color', 'crb_sa_background_top_color', __('Background Top Gradient Color', 'mb-sa'))
 			->set_default_value('#0DB0EC')
