@@ -10,7 +10,7 @@
 		var $win = $(window);
 		var $doc = $(document);
 		var $body = $('body');
-		var $container = $('.bar-plugin');
+		var $container = $('.sa_bar');
 		
 		if($container.length){
 			$container.each(function(index, elem) {
@@ -25,7 +25,7 @@
 					var _backgroundBottomGradient = $elem.data('background-gradient-bottom');
 					var _color = $elem.data('color');
 					var _separator = $elem.data('separator');
-					var _prefix = 'bar-plugin';
+					var _prefix = 'sa_bar';
 					var $classes = {
 						ShowBar : _prefix + '-show-bar'
 					}
@@ -60,7 +60,7 @@
 
 					$body.find('.' + _prefix + '-btn-close, .sa-close-btn').click(function(event){
 						var $this = $(this);
-						var $bar = $this.closest('.bar-plugin');
+						var $bar = $this.closest('.sa_bar');
 
 						setTimeout(function() {
 							if ($fixedHeader.length > 0 && $fixedHeader.css('position') === 'fixed' || $fixedHeader.css('position') === 'absolute') {
@@ -89,7 +89,7 @@
 
 					$win.load(function(){
 						_height = $barPlugin.height();
-						_data_height = parseInt($barPlugin.closest('.bar-plugin').data('height'));
+						_data_height = parseInt($barPlugin.closest('.sa_bar').data('height'));
 
 						if (_data_height > _height) {
 							$barPlugin.css('height', _data_height);
@@ -100,7 +100,7 @@
 						if ($fixedHeader.length > 0 && $fixedHeader.css('position') === 'fixed') {
 							var _top = $body.hasClass('admin-bar') ? $('#wpadminbar') .outerHeight() : '0';
 
-							$barPlugin.closest('.bar-plugin:not(.bottom)').css({
+							$barPlugin.closest('.sa_bar:not(.bottom)').css({
 								'position' : 'fixed',
 								'top'      : _top,
 								'left'      : '0',
@@ -109,7 +109,7 @@
 						} else if ($fixedHeader.length > 0 && $fixedHeader.css('position') === 'absolute') {
 							var _top = $body.hasClass('admin-bar') ? $('#wpadminbar') .outerHeight() : '0';
 
-							$barPlugin.closest('.bar-plugin:not(.bottom)').css({
+							$barPlugin.closest('.sa_bar:not(.bottom)').css({
 								'position' : 'absolute',
 								'top'      : _top,
 								'left'      : '0',
@@ -134,7 +134,7 @@
 								$barPlugin.removeAttr('style');
 
 								_height = $barPlugin.height();
-								_data_height = parseInt($barPlugin.closest('.bar-plugin').data('height'));
+								_data_height = parseInt($barPlugin.closest('.sa_bar').data('height'));
 								_used_height = 0;
 
 								if (_data_height > _height) {
@@ -148,13 +148,13 @@
 								if ($fixedHeader.length > 0 && $fixedHeader.css('position') === 'fixed' || $fixedHeader.css('position') === 'absolute') {
 									var _top = $body.hasClass('admin-bar') ? $('#wpadminbar') .outerHeight() : '0';
 
-									$barPlugin.closest('.bar-plugin:not(.bottom)').css({
+									$barPlugin.closest('.sa_bar:not(.bottom)').css({
 										'top'        : _top,
 									});
 								}
 
 								if ($fixedHeader.length && $fixedHeader.css('position') === 'fixed') {
-									$barPlugin.closest('.bar-plugin:not(.bottom)').css({
+									$barPlugin.closest('.sa_bar:not(.bottom)').css({
 										'top'             : _top,
 										'position'        : 'fixed',
 									});
@@ -167,12 +167,12 @@
 										'margin-top' : _used_height
 									});
 								} else if ($fixedHeader.length > 0 && $fixedHeader.css('position') === 'absolute') {
-									$barPlugin.closest('.bar-plugin:not(.bottom)').css({
+									$barPlugin.closest('.sa_bar:not(.bottom)').css({
 										'top'             : _top,
 										'position'        : 'absolute',
 									});
 								} else if ($fixedHeader.length > 0 && $fixedHeader.css('position') === 'static') {
-									$barPlugin.closest('.bar-plugin:not(.bottom)').css({
+									$barPlugin.closest('.sa_bar:not(.bottom)').css({
 										'position'        : 'static',
 									});
 								}

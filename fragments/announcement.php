@@ -78,10 +78,10 @@ if ( empty( $separator_color ) ) {
 
 $button_style = carbon_get_post_meta( $post_id, 'crb_sa_button_style' );
 
-$class = 'bar-plugin ' . $message_position;
+$class = 'sa_bar ' . $message_position;
 
 if ( $button_style === 'floating' ) {
-	$class .= ' bar-plugin--floating-btn';
+	$class .= ' sa_bar--floating-btn';
 }
 
 $message_shell_width = carbon_get_post_meta( $post_id, 'crb_sa_message_width' );
@@ -114,11 +114,11 @@ $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze'
 	data-snooze="<?php echo ! empty( $snooze_popup ) ? 'true' : ''; ?>"
 	data-snooze-days="<?php echo ! empty( $number_of_days ) ? $number_of_days : '0'; ?>"
 >
-	<div class="bar-plugin-shell" style="max-width: <?php echo $message_shell_width; ?>">
+	<div class="sa_bar-shell" style="max-width: <?php echo $message_shell_width; ?>">
 
 		<?php if ( $button_behaviour === 'new-page' ) : ?>
 
-			<a href="#" class="bar-plugin-btn-close"></a>
+			<a href="#" class="sa_bar-btn-close"></a>
 
 		<?php endif; ?>
 
@@ -133,17 +133,28 @@ $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze'
 
 			?>
 
-			<?php if ( ! empty( $logo ) ) : ?>
-				<li class="bar-plugin__logo">
-					<div class="bar-plugin-table">
-						<div class="bar-plugin-table-cell logo-cell">
-							<a href="<?php echo $logo_link; ?>" class="bar-plugin-logo" target="_blank">
-								<?php echo wp_get_attachment_image( $logo, 'logo-image' ); ?>
-							</a>
-						</div><!-- /.bar-plugin-table-cell -->
-					</div><!-- /.bar-plugin-table -->
+			<?php if ( ! empty( $logo ) ) :
 
-					<span class="bar-plugin-separator"></span>
+			$width  = carbon_get_post_meta( $post_id, 'crb_sa_logo_width' );
+			$height = carbon_get_post_meta( $post_id, 'crb_sa_logo_height' );
+
+			if ( ! is_numeric( $width ) || empty( $width ) ) {
+				$width = 'auto';
+			}
+
+			if ( ! is_numeric( $height ) || empty( $height ) ) {
+				$height = 'auto';
+			}
+
+			?>
+				<li class="sa_bar__logo">
+					<a href="<?php echo $logo_link; ?>" class="sa_logo-bar" target="_blank">
+						<?php echo wp_get_attachment_image( $logo, 'medium_large', false, [
+							'style' => sprintf( 'width: %spx; height: %spx', $width, $height )
+						] ); ?>
+					</a>
+
+					<span class="sa_bar-separator"></span>
 				</li>
 			<?php endif; ?>
 
@@ -151,12 +162,12 @@ $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze'
 
 			if ( ! empty( $message ) ) : ?>
 
-				<li class="bar-plugin__message">
-					<div class="bar-plugin-table">
-						<div class="bar-plugin-table-cell">
+				<li class="sa_bar__message">
+					<div class="sa_bar-table">
+						<div class="sa_bar-table-cell">
 							<?php echo mbsa_content( $message ); ?>
-						</div><!-- /.bar-plugin-table-cell -->
-					</div><!-- /.bar-plugin-table -->
+						</div><!-- /.sa_bar-table-cell -->
+					</div><!-- /.sa_bar-table -->
 				</li>
 
 			<?php endif;
@@ -183,8 +194,8 @@ $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze'
 					}
 					?>
 
-					<li class="bar-plugin__btn">
-						<a style="<?php printf( 'border-radius: %s', $button_radius ); ?>" href="<?php echo $button_link; ?>" class="bar-plugin-btn" <?php echo $target; ?>>
+					<li class="sa_bar__btn">
+						<a style="<?php printf( 'border-radius: %s', $button_radius ); ?>" href="<?php echo $button_link; ?>" class="sa_bar-btn" <?php echo $target; ?>>
 							<span><?php echo $button_text; ?></span>
 						</a>
 					</li>
@@ -193,13 +204,13 @@ $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze'
 
 			else : ?>
 
-				<li class="bar-plugin__btn">
-					<a href="#" class="bar-plugin-btn sa-close-btn">
+				<li class="sa_bar__btn">
+					<a href="#" class="sa_bar-btn sa-close-btn">
 						<span><?php echo $button_text; ?></span>
 					</a>
 				</li>
 
 			<?php endif; ?>
 		</ul>
-	</div><!-- /.bar-plugin-shell -->
-</div><!-- /.bar-plugin -->
+	</div><!-- /.sa_bar-shell -->
+</div><!-- /.sa_bar -->
