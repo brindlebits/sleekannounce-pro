@@ -56,7 +56,7 @@
 						_clone.prependTo('body');
 					}
 
-					var $barPlugin = $(_clone).find('ul');
+					var $barPlugin = $(_clone).find('.sa_bar__container');
 
 					$body.find('.' + _prefix + '-btn-close, .sa-close-btn').click(function(event){
 						var $this = $(this);
@@ -272,4 +272,41 @@
 		const expires = "expires="+ date.toUTCString();
 		document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
 	}
+
+	$(window).on('load', function() {
+		var $counters = $('.sa_js-counter');
+
+		$counters.each(function(index, elem) {
+			var $counter = $(elem);
+			var date = $counter.attr('data-date');
+			var start = $counter.attr('data-date-start');
+			var countDownDate = new Date(date).getTime();
+
+
+			var x = setInterval(function() {
+				var now = new Date().getTime();
+
+				var distance = countDownDate - now;
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				var daysContainer = $counter.find('.sa_js-days');
+				var hoursContainer = $counter.find('.sa_js-hours');
+				var minutesContainer = $counter.find('.sa_js-minutes');
+				var secondsContainer = $counter.find('.sa_js-seconds');
+
+				daysContainer.text(days);
+				hoursContainer.text(hours);
+				minutesContainer.text(minutes);
+				secondsContainer.text(seconds);
+
+				if (distance < 0) {
+					clearInterval(x);
+				}
+			}, 1000);
+		});
+	})
+
 })(jQuery, window, document);

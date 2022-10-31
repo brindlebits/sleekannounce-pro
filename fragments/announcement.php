@@ -100,6 +100,9 @@ $message_shell_width .= 'px';
 $snooze_popup   = carbon_get_post_meta( $post_id, 'crb_sa_banner_snooze' );
 $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze' );
 
+$include_counter = carbon_get_post_meta( $post_id, 'crb_sa_counter_include' );
+$counter         = carbon_get_post_meta( $post_id, 'crb_sa_counter' );
+
 ?>
 <div class="
 	<?php echo $class; ?>
@@ -165,10 +168,66 @@ $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze'
 
 			<?php
 
-			if ( ! empty( $message ) ) : ?>
+			if ( ! empty( $message ) && ( ! empty( $include_counter ) && ! empty( $counter ) ) ) : ?>
 
 				<li class="sa_bar__message">
-					<?php echo mbsa_content( $message ); ?>
+					<div class="sa_bar__message-text">
+						<?php echo mbsa_content( $message ); ?>
+					</div><!-- /.sa_bar__message-text -->
+
+					<?php if ( ! empty( $include_counter ) && ! empty( $counter ) ) :
+
+					$timestamp_now     = strtotime( wp_date( 'Y-m-d H:i:s' ) );
+					$timestamp_counter = strtotime( $counter );
+
+					$remainder         = $timestamp_counter - $timestamp_now;
+
+					$counter_array     = secondsToTime( $remainder );
+
+					?>
+						<?php if ( $remainder > 0 ): ?>
+							<div class="sa_bar__counter">
+								<div
+								class="counter sa_js-counter"
+								data-date="<?php echo $counter; ?>"
+								data-date-start="<?php echo wp_date( 'Y-m-d H:i:s' ); ?>">
+									<ul>
+										<li>
+											<div class="counter__text">
+												<strong class="sa_js-days"><?php echo $counter_array['d']; ?></strong>
+
+												<span><?php _e( 'Days', 'mb-sa' ) ?></span>
+											</div><!-- /.counter__text -->
+										</li>
+
+										<li>
+											<div class="counter__text">
+												<strong class="sa_js-hours"><?php echo $counter_array['h']; ?></strong>
+
+												<span><?php _e( 'Hrs', 'mb-sa' ) ?></span>
+											</div><!-- /.counter__text -->
+										</li>
+
+										<li>
+											<div class="counter__text">
+												<strong class="sa_js-minutes"><?php echo $counter_array['m']; ?></strong>
+
+												<span><?php _e( 'Min', 'mb-sa' ) ?></span>
+											</div><!-- /.counter__text -->
+										</li>
+
+										<li>
+											<div class="counter__text">
+												<strong class="sa_js-seconds"><?php echo $counter_array['s']; ?></strong>
+
+												<span><?php _e( 'Sec', 'mb-sa' ) ?></span>
+											</div><!-- /.counter__text -->
+										</li>
+									</ul>
+								</div><!-- /.counter -->
+							</div><!-- /.sa_bar__counter -->
+						<?php endif ?>
+					<?php endif ?>
 				</li>
 
 			<?php endif;

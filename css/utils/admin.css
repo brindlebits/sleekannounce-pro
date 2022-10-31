@@ -81,6 +81,9 @@ body.wp-admin.wp-admin.wp-admin .wp-submenu a[href="admin.php?page=crb_carbon_fi
 .cf-container-carbon_fields_container_sleekannounce .cf-container .cf-field input:focus,
 .cf-container-carbon_fields_container_sleekannounce .cf-container .cf-field textarea:focus,
 .cf-container-carbon_fields_container_sleekannounce .cf-container .cf-field select:focus { border-color: #ff2f73; outline: 0; box-shadow: 0; }
+.cf-container-carbon_fields_container_sleekannounce .cf-container .cf-field select:focus { border-color: #ff2f73; outline: 0; box-shadow: 0; }
+
+.flatpickr-calendar.hasTime .flatpickr-time { height: 40px; }
 
 /*.cf-container-carbon_fields_container_sleekannounce.cf-container .cf-field + .cf-field { border-top: 0; }*/
 
