@@ -67,6 +67,9 @@
 .sa_bar--align-center .sa_bar__message { width: auto; max-width: calc(100% - 360px); }
 .sa_bar--align-center .sa_bar__btn { margin-left: 0;  }
 
+/* --has-counter */
+.sa_bar--has-counter .sa_bar__btn { margin-left: 0; }
+
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
 	.sa_bar,

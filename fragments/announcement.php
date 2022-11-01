@@ -103,6 +103,10 @@ $number_of_days = carbon_get_post_meta( $post_id, 'crb_sa_number_of_days_snooze'
 $include_counter = carbon_get_post_meta( $post_id, 'crb_sa_counter_include' );
 $counter         = carbon_get_post_meta( $post_id, 'crb_sa_counter' );
 
+if ( ! empty( $include_counter ) && ! empty( $counter ) ) {
+	$class .= ' sa_bar--has-counter';
+}
+
 ?>
 <div class="
 	<?php echo $class; ?>
