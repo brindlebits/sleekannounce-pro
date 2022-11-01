@@ -14,7 +14,7 @@
 .sa_bar .sa_bar__message { width: calc(100% - 360px); display: flex; align-items: center; padding-right: 10px; align-items: center; }
 .sa_bar .sa_bar__message .sa_bar__counter { flex-shrink: 0; margin-left: auto; padding: 5px 10px; }
 
-.sa_bar .sa_bar__btn { width: 160px; }
+.sa_bar .sa_bar__btn { width: 160px; margin-left: auto; }
 .sa_bar.sa_bar.sa_bar.sa_bar p { line-height: 1.4; font-weight: 300; padding: 14px 0; font-size: 16px; }
 .sa_bar-shell { max-width: 960px; padding: 0 42px 0 0; margin: 0 auto; position: relative; }
 
