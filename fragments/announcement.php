@@ -122,13 +122,13 @@ $counter         = carbon_get_post_meta( $post_id, 'crb_sa_counter' );
 	data-snooze="<?php echo ! empty( $snooze_popup ) ? 'true' : ''; ?>"
 	data-snooze-days="<?php echo ! empty( $number_of_days ) ? $number_of_days : '0'; ?>"
 >
+	<?php if ( $button_behaviour === 'new-page' ) : ?>
+
+		<a href="#" class="sa_bar-btn-close"></a>
+
+	<?php endif; ?>
+
 	<div class="sa_bar-shell" style="max-width: <?php echo $message_shell_width; ?>">
-
-		<?php if ( $button_behaviour === 'new-page' ) : ?>
-
-			<a href="#" class="sa_bar-btn-close"></a>
-
-		<?php endif; ?>
 
 		<ul class="sa_bar__container">
 			<?php
@@ -168,7 +168,7 @@ $counter         = carbon_get_post_meta( $post_id, 'crb_sa_counter' );
 
 			<?php
 
-			if ( ! empty( $message ) && ( ! empty( $include_counter ) && ! empty( $counter ) ) ) : ?>
+			if ( ! empty( $message ) || ( ! empty( $include_counter ) && ! empty( $counter ) ) ) : ?>
 
 				<li class="sa_bar__message">
 					<div class="sa_bar__message-text">

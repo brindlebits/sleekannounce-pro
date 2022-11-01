@@ -39,14 +39,9 @@ Container::make( 'post_meta', __( 'SleekAnnounce', 'mb-sa' ) )
 			->set_default_value( '65' )
 			->set_help_text( 'Set height (number only, which is rendered in px).' ),
 		Field::make( 'image', 'crb_sa_logo', __('Upload Logo', 'mb-sa' ) )
-			->help_text( 'Recommended size: 170px x 40px (double the size for retina optimization). Larger images will be automatically resized. </br> You can select the width and height of the logo below, however it\'s a good idea to only define one of the dimensions and leave the other one empty, in order to make sure that the image will keep its aspect ratio and not stretch.' ),
+			->help_text( 'Max image width is 200px to prevent breaking the banner. <br> Larger images will be automatically limited to 200px width. <br>Height is set automatically based on width entered below to maintain proper aspect ratio', 'mb-sa' ),
 		Field::make( 'text', 'crb_sa_logo_width', __( 'Logo Width', 'mb-sa' ) )
-			->set_width( 50 )
 			->help_text( 'in px' ),
-		Field::make( 'text', 'crb_sa_logo_height', __( 'Logo Height', 'mb-sa' ) )
-			->set_width( 50 )
-			->help_text( 'in px' ),
-
 		Field::make( 'text', 'crb_sa_logo_link', __( 'Logo Link', 'mb-sa' ) ),
 		Field::make( 'rich_text', 'crb_sa_announcement_text', __( 'Announcement Text', 'mb-sa' ) )
 			->set_default_value( 'Add a beautiful, fully responsive announcement to your site!' )
