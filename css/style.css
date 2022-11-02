@@ -31,7 +31,7 @@
 .sa_bar-table { width: 100%; height: inherit; }
 .sa_bar-table-cell { display: table-cell; vertical-align: middle; height: inherit; }
 
-.sa_bar-btn-close { position: absolute; top: 50%; right: 15px; transform: translateY(-50%); width: 24px; height: 24px; text-decoration: none; font-size: 0; line-height: 0; text-indent: -4004px; }
+.sa_bar-btn-close { position: absolute; top: 50%; right: 6px; transform: translateY(-50%); width: 24px; height: 24px; text-decoration: none; font-size: 0; line-height: 0; text-indent: -4004px; }
 .sa_bar-btn-close:hover { text-decoration: none; opacity: 0.75; }
 .sa_bar-btn-close:before,
 .sa_bar-btn-close:after { content: ' '; position: absolute; left: 50%; top: 50%; width: 2px; height: 22px; margin: -9px 0 0 -2px; background-color: #fff; border-radius: 2px; }
@@ -81,7 +81,6 @@
 	.sa_bar .sa_bar__message .sa_bar__counter { order: -1; padding: 10px 0 0; margin: 0 auto 10px 0; }
 	.sa_bar .sa_bar__btn { width: 98px; }
 	.sa_bar-btn span { padding: 0 18px; }
-	.sa_bar-btn-close { right: 10px; }
 
 	.sa_bar.no-logo .sa_bar__message { display: block; width: calc(100% - 110px); }
 	.sa_bar .sa_bar__message .sa_bar__message-text { width: 100%; }
