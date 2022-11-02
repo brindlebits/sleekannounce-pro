@@ -75,13 +75,13 @@
 @media only screen and (max-width: 767px) {
 	.sa_bar,
 	.sa_bar-btn { font-size: 16px; text-align: left; }
-	.sa_bar-shell { padding: 0 46px 0 9px; }
+	.sa_bar-shell { padding: 0 30px; }
 	.sa_bar .sa_bar__logo { display: none; }
 	.sa_bar .sa_bar__message { width: calc(100% - 110px); flex-wrap: wrap; }
-	.sa_bar .sa_bar__message .sa_bar__counter { order: -1; padding: 10px 0 0; margin: 0 auto 10px; }
+	.sa_bar .sa_bar__message .sa_bar__counter { order: -1; padding: 10px 0 0; margin: 0 auto 10px 0; }
 	.sa_bar .sa_bar__btn { width: 98px; }
 	.sa_bar-btn span { padding: 0 18px; }
-	.sa_bar-btn-close { right: 12px; }
+	.sa_bar-btn-close { right: 10px; }
 
 	.sa_bar.no-logo .sa_bar__message { display: block; width: calc(100% - 110px); }
 	.sa_bar .sa_bar__message .sa_bar__message-text { width: 100%; }
@@ -96,7 +96,7 @@
 	.sa_bar--floating-btn.sa_bar.sa_bar.sa_bar.sa_bar p { padding: 8px 0; }
 
 	.sa_bar--align-center .sa_bar__message { text-align: center; justify-content: center; padding-right: 0; max-width: 100%; }
-	.sa_bar--align-center .sa_bar__message .sa_bar__counter {  }
+	.sa_bar--align-center .sa_bar__message .sa_bar__counter { margin: 0 auto 10px; }
 	.sa_bar--align-center .sa_bar__btn { justify-content: center; }
 	.sa_bar--align-center .sa_bar-shell { padding: 0 46px; }
 }
