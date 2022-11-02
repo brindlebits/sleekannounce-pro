@@ -93,6 +93,8 @@ $message_shell_width = carbon_get_post_meta( $post_id, 'crb_sa_message_width' );
 
 if ( empty( $message_shell_width ) ) {
 	$message_shell_width = 960;
+} else {
+	$message_shell_width = strval( intval( $message_shell_width + 80 ) );
 }
 
 $message_shell_width .= 'px';

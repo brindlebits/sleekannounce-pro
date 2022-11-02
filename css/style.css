@@ -17,9 +17,9 @@
 
 .sa_bar .sa_bar__btn { max-width: 180px; flex-shrink: 0; margin-left: auto; }
 .sa_bar.sa_bar.sa_bar.sa_bar p { line-height: 1.4; font-weight: 300; padding: 14px 0; font-size: 16px; }
-.sa_bar-shell { max-width: 960px; padding: 0 42px 0 0; margin: 0 auto; position: relative; }
+.sa_bar-shell { max-width: 960px; padding: 0 40px; margin: 0 auto; position: relative; }
 
-.sa_logo-bar { display: block; width: 100%; padding: 6px 0 5px 15px; text-decoration: none; }
+.sa_logo-bar { display: block; width: 100%; padding: 6px 0 5px; text-decoration: none; }
 .sa_logo-bar img { display: block; max-width: 100%; height: auto; }
 .sa_logo-bar:hover { text-decoration: none; opacity: 0.75; }
 
@@ -31,7 +31,7 @@
 .sa_bar-table { width: 100%; height: inherit; }
 .sa_bar-table-cell { display: table-cell; vertical-align: middle; height: inherit; }
 
-.sa_bar-btn-close { position: absolute; top: 50%; right: 17px; transform: translateY(-50%); width: 24px; height: 24px; text-decoration: none; font-size: 0; line-height: 0; text-indent: -4004px; }
+.sa_bar-btn-close { position: absolute; top: 50%; right: 15px; transform: translateY(-50%); width: 24px; height: 24px; text-decoration: none; font-size: 0; line-height: 0; text-indent: -4004px; }
 .sa_bar-btn-close:hover { text-decoration: none; opacity: 0.75; }
 .sa_bar-btn-close:before,
 .sa_bar-btn-close:after { content: ' '; position: absolute; left: 50%; top: 50%; width: 2px; height: 22px; margin: -9px 0 0 -2px; background-color: #fff; border-radius: 2px; }
